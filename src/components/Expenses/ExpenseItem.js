@@ -4,12 +4,16 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import './ExpenseItem.css';
 
+//useState(); <-- NOT ALLOWED OUTSIDE
 const ExpenseItem = (props) => {
   // function clickHandler() {}
   const [title, setTitle] = useState(props.title);
   console.log('ExpenseItem evaluated by React');
   
   const clickHandler = () => {
+    //useState(); <-- NOT ALLOWED IN NESTED FUNCTIONS
+    //Instead call state updating function
+    //The function schedules the change
     setTitle('Updated!');
     console.log(title);
   };
