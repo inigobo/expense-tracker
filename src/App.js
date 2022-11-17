@@ -39,10 +39,17 @@ const App = () => {
   //   React.createElement(Expenses, { items: expenses })
   // );
 
+  const addExpenseHandler = (expense) => {
+    console.log(expense); 
+  }
+
+  const filterExpensesHandler = (filterYear) => {
+    console.log(filterYear);
+  }
   return (
     <div>
-      <NewExpense/>   
-      <Expenses items={expenses} />
+      <NewExpense onAddExpense={addExpenseHandler}/>   
+      <Expenses items={expenses} onFilterExpenses={filterExpensesHandler} />
     </div>
   );
 }
