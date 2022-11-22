@@ -8,15 +8,6 @@ const ExpenseForm = (props) => {
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
-    //Alternative with one state
-    // const [userInput, setUserInput] =  useState(
-    //     {
-    //         enteredTitle: '',
-    //         enteredAmunt: '',
-    //         enteredDate: '',
-    //     }
-    // )
-
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
     };
@@ -24,6 +15,7 @@ const ExpenseForm = (props) => {
         setEnteredAmount(event.target.value);
     };
     const dateChangeHandler = (event) => {
+        console.log(event.target.value);
         setEnteredDate(event.target.value);
     };
 
@@ -33,9 +25,9 @@ const ExpenseForm = (props) => {
         const expenseData = {
             title: enteredTitle,        
             amount: enteredAmount,
-            date: new Date(enteredDate)
+            date: new Date(enteredDate),
         };
-        props.onSaveExpenseData();
+        props.onSaveExpenseData(expenseData);
         console.log(expenseData);
         //Reset fields after submit
         setEnteredAmount('');
