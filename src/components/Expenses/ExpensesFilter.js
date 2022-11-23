@@ -13,7 +13,7 @@ const ExpensesFilter = (props) => {
     //     props.onFilterExpenses(filterYear);
     // }
 
-    const changeFilterHandler = (event) => {    
+    const changeFilterHandler = (event) => {
         props.onFilterExpenses(event.target.value);
     }
     // Add value prop to save the selected value. Otherwise info is passed with next render after having it saved in the 
@@ -24,6 +24,7 @@ const ExpensesFilter = (props) => {
                 <label>Filter by year</label>
 
                 <select value={props.selected} onChange={changeFilterHandler}>
+                    <option value='all'>All</option>
                     <option value='2023'>2023</option>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
